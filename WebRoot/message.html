@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<title>云南腾俊投资集团</title>
+		<meta name="viewport"
+		content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="mobileOptimized" content="width" />
+		<meta name="handheldFriendly" content="true" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<link rel="stylesheet" type="text/css" href="css/global-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="css/slick.css" />
+		<link rel="stylesheet" type="text/css" href="css/message.css" />
+		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"
+		type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header class="navbar navbar-fixed-top">
+			<div class="logo">
+				<img class="img-responsive" src="img/logo.png" alt="云南腾骏投资集团" />
+			</div>
+			<nav class="subnav">
+				<span class="bar">
+					<a href="index.html">
+						<img
+						class="img-responsive" src="img/icon_home.png" alt="首页" />
+					</a></span><span class="bar">
+					<a href="fresh.html">
+						<img
+						class="img-responsive" src="img/icon_fresh.png" alt="当鲜" />
+					</a></span><span class="bar">
+					<a href="vedio.html">
+						<img
+						class="img-responsive" src="img/icon_vedio.png" alt="视频" />
+					</a></span><span class="bar-active">
+					<a href="message.html">
+						<img
+						class="img-responsive" src="img/icon_msg_active.png" alt="留言" />
+					</a></span><span class="bar">
+					<a href="">
+						<img
+						class="img-responsive" src="img/icon_monitor.png" alt="监控" />
+					</a></span><span class="bar">
+					<a href="">
+						<img
+						class="img-responsive" src="img/icon_wifi.png" alt="Wifi" />
+					</a></span>
+			</nav>
+		</header>
+		<div class="container">
+			<form class="form-horizontal" role="form">
+				<fieldset>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div id="errorMsg" class="alert alert-warning text-center"
+							style="z-index: 8;"></div>
+							<div id="succMsg" class="alert alert-success text-center"
+							style="z-index: 8;"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">姓名：</label>
+						<div class="col-sm-10">
+							<input id="inputName" class="form-control error" type="text"
+							placeholder="请在此处输入您的姓名...">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputMsg" class="col-sm-2 control-label">留言：</label>
+						<div class="col-sm-10">
+							<textarea id="inputMsg" rows="5" class="form-control"
+							placeholder="请在此处输入您的留言..."></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button id="submitBtn" class="btn btn-block btn-success btn-large" data-loading-text="正在提交..." type="button">
+								提交
+							</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<a class="pull-right" href="tel:10086">
+							<img
+							src="img/callme.png" />
+						</a>
+					</div>
+				</fieldset>
+			</form>
+
+		</div>
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript"
+		charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$('#errorMsg').hide();
+			$('#succMsg').hide();
+			$('#submitBtn').bind('click', submit);
+			function submit() {
+				var name = $('#inputName').val();
+				var content = $('#inputMsg').val();
+				var msg = '';
+				if (name == '') {
+					msg += "<p>请输入您的姓名！</p>";
+					$('#inputName').parent().addClass('has-error');
+					$('#inputName').bind('focus',function(){
+						$(this).parent().removeClass('has-error');
+					});
+				}
+				if (content == '') {
+					msg += "<p>请输入留言内容！</p>";
+					$('#inputMsg').parent().addClass('has-error');
+					$('#inputMsg').bind('focus',function(){
+						$(this).parent().removeClass('has-error');
+					});
+				}
+				if (msg != '') {
+					$('#errorMsg').html(msg);
+					$('#errorMsg').fadeIn(1000);
+					setTimeout(function() {
+						$('#errorMsg').hide(1000);
+					}, 2000);
+				} else {
+					$('#inputName').parent().removeClass('has-error');
+					$('#inputMsg').parent().removeClass('has-error');
+					$('#errorMsg').html(msg);
+					$('#errorMsg').hide();
+					$.ajax({
+						type : "post",
+						url : "message.do?name=" + name + "&content=" + content,
+						async : true,
+						success : function(data) {
+							if (data == 1) {
+								$('#inputName').val('');
+								$('#inputMsg').val('');
+								$('#succMsg').html("<p>我们已收到您的留言，感谢您的反馈！</p>");
+								$('#succMsg').fadeIn(1000);
+								setTimeout(function() {
+									$('#succMsg').hide(1000);
+								}, 2000);
+							}
+						}
+					});
+				}
+
+			}
+		</script>
+	</body>
+</html>

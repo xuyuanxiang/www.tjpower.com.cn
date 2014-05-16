@@ -1,0 +1,89 @@
+.bar-active {
+	background-image: url(../img/bg_fresh_suvnav_active.png);
+	background-repeat: repeat-x;
+}
+.content-top-nav {
+	background-color: #ccffcc;
+	padding: 5px;
+}
+.content-subnav {
+	background-color: #ccffcc;
+	margin-top: -30px;
+	height: 40px;
+	padding-top: 10px;
+}
+
+.media-list {
+	margin-top: 10px;
+}
+
+.media-list ul li {
+	list-style: none;
+}
+.intro-text {
+	background-color: #CCFFCC;
+}
+
+@media (max-width: 320px) {
+	.media img {
+		width: 105px;
+		height: 105px;
+	}
+	.jumbotron {
+		height: 160px;
+	}
+	.content-nav a img {
+		width: 70px;
+		height: 70px;
+	}
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+	.media img {
+		width: 105px;
+		height: 105px;
+	}
+	.jumbotron {
+		height: 180px;
+	}
+	.content-nav a img {
+		width: 70px;
+		height: 70px;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+	.media img {
+		width: 105px;
+		height: 105px;
+	}
+	.jumbotron {
+		height: 200px;
+	}
+	.content-nav a img {
+		width: 80px;
+		height: 80px;
+	}
+}
+
+@media (min-width: 769px) {
+	.media img {
+		width: 105px;
+		height: 105px;
+	}
+	.jumbotron {
+		height: 210px;
+	}
+	.content-nav a img {
+		width: 96px;
+		height: 96px;
+	}
+}
+@media (min-width: 1224px) {
+	.content-nav a img {
+		width: 119px;
+		height: 119px;
+	}
+}
+@media (min-width: 1824px) {
+}

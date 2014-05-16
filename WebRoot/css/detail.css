@@ -1,0 +1,109 @@
+.bar-active {
+	background-image: url(../img/bg_fresh_suvnav_active.png);
+	background-repeat: repeat-x;
+}
+.screen {
+	background-color: #ccffcc;
+}
+
+.screen img {
+	padding: 5px;
+}
+
+.screen .text-left{
+	position: absolute;
+	z-index: 8;
+	left: 60%;
+}
+
+.verify .verify-text {
+	padding-top: 30px;
+	padding-left: 80px;
+	line-height: 22px;
+	transform: rotate(-20deg);
+	-ms-transform: rotate(-20deg);	/* IE 9 */
+	-moz-transform: rotate(-20deg);	/* Firefox */
+	-webkit-transform: rotate(-20deg); /* Safari 和 Chrome */
+	-o-transform: rotate(-20deg);
+}
+
+.nav.nav-tabs li{
+	background-color: #ffff99;
+	border-left: 4px white solid;
+	border-radius: 5px;
+}
+.tab-content {
+	background-color: #CCFFCC;
+	margin-top: -20px;
+}
+.tab-content .tab-pane{
+	width: 90%;
+	text-align: left;
+	text-indent: 2em;
+	padding-bottom: 25px;
+}
+
+.btn-group{
+	height: 40px;
+}
+
+@media (max-width: 320px) {
+	.verify {
+		position: absolute;
+		z-index: 9;
+		top: 135px;
+		left: 50%;
+	}
+	.verify img {
+		width: 110px;
+	}
+
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+	.verify {
+		position: absolute;
+		z-index: 9;
+		top: 160px;
+		left: 50%
+	}
+	.verify img {
+		width: 150px;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+	.verify {
+		position: absolute;
+		z-index: 9;
+		top: 180px;
+		left: 55%;
+	}
+	.verify img {
+		width: 180px;
+	}
+}
+
+@media (min-width: 769px) {
+	.verify {
+		position: absolute;
+		z-index: 9;
+		top: 210px;
+		left: 40%;
+	}
+	.verify img {
+		width: 240px;
+	}
+
+}
+@media (min-width: 1224px) {
+	.verify {
+		position: absolute;
+		z-index: 9;
+		top: 210px;
+		left: 30%;
+	}
+	.verify img {
+		width: 240px;
+	}
+}

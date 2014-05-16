@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="cn.com.tjpower.www.model.User" alias="User" />
+		<typeAlias type="cn.com.tjpower.www.model.Message" alias="Message" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="cn/com/tjpower/www/data/oracle/UserMapper.xml" />
+		<mapper resource="cn/com/tjpower/www/data/oracle/MessageMapper.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MessageMapper">
+	<select id="get" parameterType="java.lang.String" resultType="Message">
+		select id as "id", name as "name", content as "content",created as
+		"created" from e_message
+		where id=#{id}
+	</select>
+	<select id="getAll" resultType="Message">
+		select id as "id", name as
+		"name", content as "content",created as
+		"created" from e_message
+	</select>
+	<insert id="insert" parameterType="Message">
+		insert into
+		e_message(id,name,content,created) values
+		(#{id,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},#{created,jdbcType=TIMESTAMP})
+	</insert>
+	<delete id="delete" parameterType="java.lang.String">
+		delete from e_message where id
+		=
+		#{id}
+	</delete>
+</mapper>
